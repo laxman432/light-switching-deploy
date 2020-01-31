@@ -1,0 +1,100 @@
+<html>
+<head> 
+<style>
+.redColor {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.greenColor {
+  height: 30px;
+  width: 30px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+.label{
+font-weight : bold;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center;border:1px solid">
+<h1 style="text-align:center"> 
+Switching Lights
+</h1>
+
+<div style="margin-top:3%">
+<span id="v1"></span>
+<span id="v2"></span>
+<span id="v3"></span>
+<span id="v4"></span>
+<span id="v5"></span>
+<span id="v6"></span>
+<span id="v7"></span>
+<span id="v8"></span>
+<span id="v9"></span
+</div>
+<p style="margin-top:3%"> <span class="label" style="color:red"> Red </span> : OFF </p>
+<p> <span class="label" style="color:green"> Green </span>: ON </p>
+</div>
+
+
+
+<script>
+function convertToObj(s){
+var y = s.split(',')
+{
+var t;
+var obj = {};
+y.forEach((i) => {
+t = i.split('=');
+obj[t[0]] = t[1];
+if(obj[t[0]] > 0) {
+document.getElementById('')
+}
+
+});
+console.log(obj);
+for( const property in obj){ 
+if(`${obj[property]}` > 0) {
+var el = document.getElementById(`${property}`);
+// console.log(el);
+el.classList.add("greenColor");
+} else {
+var el = document.getElementById(`${property}`);
+// console.log(el);
+el.classList.add("redColor");
+}
+}
+}
+}
+
+
+convertToObj('v1=1,v0=3,v3=1,v4=0,v5=7,v6=5,v7=0,v8=1,v9=6');
+
+// setInterval(function(){ 
+// var xhttp = new XMLHttpRequest();
+// xhttp.open("GET", "http://fratelloinnotech.com/iotapi/view.php", true);
+// xhttp.send();
+// convertToObj('v1=0,v2=3,v3=0,v4=6,v5=7,v6=5,v7=4,v8=0,v9=6'); }, 3000);
+// })
+ 
+</script>
+</body>
+
+</html>
+
+
+<!-- If string is returned, i can convert it to object, if it is in this particular format - 'v1=4,v2=3,v3=5' ;
+the key values ( example : v1,v2 etc..) must be in constant name, so that we can call them dynamically in HTML  -->
+
+<!-- This is the best practise to loop in frontend :
+ array = [{'name' : 'v1' , 'value' : 4}, {'name' : 'v2' , 'value' : 5}, {'name' : 'v3' , 'value' : 5}] 
+ -->
+
+
